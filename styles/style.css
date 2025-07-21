@@ -36,7 +36,7 @@ html, body {
   align-items: center;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  font-size: clamp(12px, 2vw, 20px);
+  font-size: clamp(12px, 2vw, 16px);
   color: var(--light-color);
   border: 1px solid var(--bg-color);
 }
