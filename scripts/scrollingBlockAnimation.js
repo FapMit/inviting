@@ -104,7 +104,7 @@ function scrollingBlockAnimation() {
     scrollTimeout = setTimeout(() => {
       isScrolling = false;
       isUserDraggingScrollbar = false;
-    }, 2000);
+    }, 1000);
   }
 }
 
