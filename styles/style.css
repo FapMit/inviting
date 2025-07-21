@@ -10,6 +10,7 @@ html, body {
   interpolate-size: allow-keywords;
   overflow: hidden;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch
 }
 
 .title {
