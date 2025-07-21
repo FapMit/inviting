@@ -9,6 +9,7 @@ html, body {
   background-color: var(--bg-color);
   interpolate-size: allow-keywords;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 .title {
