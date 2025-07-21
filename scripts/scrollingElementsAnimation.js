@@ -1,15 +1,12 @@
 function scrollingElementsAnimation() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.intersectionRatio > 0.9) {
+      if (entry.intersectionRatio > 0.8) {
         entry.target.classList.add('visible');
-      } 
-      // else {
-      //   entry.target.classList.remove('visible');
-      // }
+      }
     });
   }, {
-    threshold: '0.9'
+    threshold: '0.8'
   });
 
   const elements = document.querySelectorAll('.scroll-item');
