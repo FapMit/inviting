@@ -6,12 +6,10 @@ function timerAnimation() {
   
   const deadline = new Date("Jule 30, 2025, 15:00");
   
-  // Функция склонения числительных
   const declensionNum = (num, words) => {
     return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][num % 10 < 5 ? num % 10 : 5]];
   };
 
-  // Функция обновления таймера
   const updateTimer = () => {
     const now = new Date();
     const diff = Math.max(0, deadline - now);
@@ -36,9 +34,7 @@ function timerAnimation() {
     }
   };
 
-  // Запустите таймер
   const timerId = setInterval(updateTimer, 1000);
-  // updateTimer();
 }
 
 export default timerAnimation;

@@ -702,6 +702,11 @@ html, body {
   margin: 20px 0;
 }
 
+.tg__link picture {
+  display: flex;
+  justify-content: center;
+}
+
 .scroll-item .tg__link {
   opacity: 0;
   scale: 0.8;
@@ -744,20 +749,43 @@ html, body {
 
 .footer img {
   object-fit: cover;
-  max-width: 100%;
-  transition: all 1s ease-in-out;
-}
-
-.footer.scroll-item img {
-  max-width: 0;
-}
-
-.footer.scroll-item img:last-child {
-  margin-left: auto;
-}
-
-.footer.scroll-item.visible img {
   max-width: 75%;
+  width: 100%;
+  height: auto;
+  transition: all 1s ease-in-out;
+  position: relative;
+}
+
+.footer.scroll-item .footer__image {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.footer.scroll-item .footer__image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transition: all 1.5s ease-in-out var(--t);
+}
+
+.footer.scroll-item .footer__image:last-child::after {
+  left: auto;
+  right: 0;
+}
+
+.footer.scroll-item .footer__image:last-child picture {
+  display: flex;
+  justify-content: end;
+}
+
+.footer.scroll-item.visible .footer__image::after {
+  max-width: 0%;
 }
 
 .footer__title {
