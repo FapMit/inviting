@@ -819,7 +819,7 @@ html, body {
 }
 
 .footer__title {
-  padding: 30px 0 15px;
+  padding: 30px 15px 30px;
   text-shadow: 5px 5px 5px var(--dark-color);
   width: 100%;
 }
