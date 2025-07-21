@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Znikomit';
+  font-weight: 400;
+  font-style: normal;
+  src: local("Znikomit"),
+    url("../fonts/znikomit.woff2") format('woff2'),
+    url("../fonts/znikomit.woff") format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MADETheArtistScript';
+  font-weight: 400;
+  font-style: normal;
+  src: local('MADETheArtistScript'),
+    url('../fonts/Madetheartistscript.woff2') format('woff2'),
+    url('../fonts/Madetheartistscript.woff') format('woff');
+  font-display: swap;
+}
