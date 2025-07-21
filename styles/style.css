@@ -1,22 +1,6 @@
 @import url('./reset.css');
 @import url('./fonts.css');
 
-:root {
-  --light-color: #ffffff;
-  --dark-color: #000000;
-  --accent-color: #fe48d7;
-  /* --accent-color: #FE019A; */
-  --inverted-color: #222222;
-  --bg-color: #dddddd;
-
-  --numbers-font: 'Znikomit', sans-serif;
-  --names-font: 'MADETheArtistScript', sans-serif;
-}
-
-/* ::-webkit-scrollbar {
-  width: 0;
-} */
-
 html, body {
   font-family: var(--names-font);
   font-weight: 400;
