@@ -8,7 +8,6 @@ function scrollingBlockAnimation() {
   let isUserDraggingScrollbar = false;
   scrollToSection(currentSection);
 
-  // Обработчик скролла
   container.addEventListener('scroll', () => {
     if (isUserDraggingScrollbar) {
       // При перетаскивании ползунка определяем ближайшую секцию
@@ -23,7 +22,6 @@ function scrollingBlockAnimation() {
     
     if (isScrolling) return;
     
-    // Определяем текущую секцию
     const scrollPosition = container.scrollTop;
     const newSection = Math.round(scrollPosition / window.innerHeight);
     
@@ -32,7 +30,6 @@ function scrollingBlockAnimation() {
     }
   }, { passive: true });
   
-  // Обработчик начала перетаскивания ползунка
   container.addEventListener('mousedown', (e) => {
     console.log('mousedown')
     if (e.target === container && e.offsetX > container.offsetWidth - 50) {
@@ -44,7 +41,6 @@ function scrollingBlockAnimation() {
     isUserDraggingScrollbar = false;
   });
   
-  // Отключаем стандартное поведение колеса мыши
   let wheelTimeout = null;
   container.addEventListener('wheel', (e) => {
     e.preventDefault();
@@ -61,7 +57,6 @@ function scrollingBlockAnimation() {
     }, 50);
   }, { passive: false });
 
-  // Обработка касаний для мобильных устройств
   let touchStartY = 0;
   let touchMoved = false;
   
@@ -81,7 +76,6 @@ function scrollingBlockAnimation() {
     const touchY = e.touches[0].clientY;
     const diff = touchStartY - touchY;
     
-    // Определяем значительное движение
     if (Math.abs(diff) > 30) {
       touchMoved = true;
       if (diff > 0) {
@@ -105,13 +99,12 @@ function scrollingBlockAnimation() {
 
     localStorage.setItem('section', index)
     
-    // Защита от множественных событий
     if (scrollTimeout !== null) clearTimeout(scrollTimeout);
 
     scrollTimeout = setTimeout(() => {
       isScrolling = false;
       isUserDraggingScrollbar = false;
-    }, 1000);
+    }, 2000);
   }
 }
 
