@@ -1,6 +1,7 @@
 function scrollingBlockAnimation() {
   const container = document.querySelector('.scroll-container');
   const sections = document.querySelectorAll('.scroll-item');
+  const scrollIndicator = document.querySelector('.scroll-indicator');
 
   let isScrolling = false;
   let currentSection = localStorage.getItem('section') || 0;
@@ -8,9 +9,9 @@ function scrollingBlockAnimation() {
   let isUserDraggingScrollbar = false;
   scrollToSection(currentSection);
 
+
   container.addEventListener('scroll', () => {
     if (isUserDraggingScrollbar) {
-      // При перетаскивании ползунка определяем ближайшую секцию
       const scrollPosition = container.scrollTop;
       const newSection = Math.round(scrollPosition / window.innerHeight);
 
@@ -31,17 +32,17 @@ function scrollingBlockAnimation() {
   }, { passive: true });
   
   container.addEventListener('mousedown', (e) => {
-    console.log('mousedown')
     if (e.target === container && e.offsetX > container.offsetWidth - 50) {
       isUserDraggingScrollbar = true;
     }
   });
   
-  document.addEventListener('mouseup', () => {
+  container.addEventListener('mouseup', () => {
     isUserDraggingScrollbar = false;
   });
   
   let wheelTimeout = null;
+
   container.addEventListener('wheel', (e) => {
     e.preventDefault();
     
@@ -96,6 +97,8 @@ function scrollingBlockAnimation() {
     sections[index].scrollIntoView({
       behavior: force ? 'auto' : 'smooth'
     });
+    
+    updateScrollIndicator()
 
     localStorage.setItem('section', index)
     
@@ -105,6 +108,13 @@ function scrollingBlockAnimation() {
       isScrolling = false;
       isUserDraggingScrollbar = false;
     }, 1000);
+  }
+
+  
+  function updateScrollIndicator() {
+    const width = (window.innerWidth / sections.length) * (+currentSection+1) - 20;
+    scrollIndicator.style.width = width + 'px';
+    scrollIndicator.textContent = +currentSection+1
   }
 }
 
