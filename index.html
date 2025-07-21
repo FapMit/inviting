@@ -77,10 +77,13 @@
       align-items: center;
       gap: 15px;
       background: var(--bg-color);
+      transition: all .3s;
     }
 
     .preloader.hide {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
     }
 
     .preloader svg {
@@ -140,18 +143,18 @@
     <div class="container">
       <img src="./assets/086_resized.jpg" alt="maksim&anastasia" class="header__image">
       <div class="header__date">
-        <p style="--t:0.3s">30</p>
-        <p style="--t:0.6s">07</p>
-        <p style="--t:0.9s">25</p>
+        <p style="--t:1.3s">30</p>
+        <p style="--t:1.6s">07</p>
+        <p style="--t:1.9s">25</p>
       </div>
       <div class="header__title">
-        <p style="--t:0.3s">
+        <p style="--t:1.3s">
           Максим
         </p>
-        <p style="--t:0.6s">
+        <p style="--t:10.6s">
           +
         </p>
-        <p style="--t:0.9s">
+        <p style="--t:1.9s">
           Анастасия
         </p>
       </div>
@@ -345,7 +348,8 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', function () {
-      document.querySelector('.preloader').classList.add('hide'); // Или другой способ скрыть
+      setTimeout(() => { document.querySelector('.preloader').classList.add('hide') }, 1000)
+
     });
   </script>
 
